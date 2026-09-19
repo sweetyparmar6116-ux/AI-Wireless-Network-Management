@@ -1,7 +1,7 @@
 # AI-Driven Closed-Loop Wireless Resource Management
 
-A small academic prototype for LO6.1 / LO6.2: *"Design and develop AI applications in
-real world scenarios using AI tools and effectively present the solution."*
+A small academic prototype for *Design and develop AI applications in
+real world scenarios using AI tools and effectively present the solution.*
 
 It implements **one focused, defensible part** of the closed-loop AI/ML wireless
 network management concept described in the research paper *"Intelligent Wireless
@@ -9,9 +9,7 @@ Network Management Through AIML-Driven Closed-Loop Control and Feedback Mechanis
 (IC-EETA 2025) — the telemetry → AI controller → resource action → network response →
 feedback loop — implemented with a genuine Q-Learning agent.
 
-**This is a simulation/prototype.** It does not connect to, or control, any real
-Wi-Fi router, access point, or radio hardware.
-
+**This is a simulation/prototype.** 
 ---
 
 ## 1. What this project actually does
@@ -38,8 +36,6 @@ NETWORK MONITORING → AI CONTROL ENGINE → RESOURCE ACTION → NETWORK RESPONS
 | Backend   | Java (`com.sun.net.httpserver.HttpServer`, part of the JDK — no frameworks) |
 | AI        | Q-Learning, implemented from scratch in `QLearningAgent.java`       |
 
-No Python, Node.js, Spring Boot, Maven, or database is used, so the whole project
-compiles and runs with just a JDK.
 
 ## 3. Project structure
 
