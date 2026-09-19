@@ -1,0 +1,6 @@
+public enum Action {
+
+    DECREASE_RESOURCES,
+    MAINTAIN_RESOURCES,
+    INCREASE_RESOURCES
+}

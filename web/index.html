@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Driven Wireless Network Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+
+    <div class="brand">
+      <h1>AI-Driven Wireless Network Management</h1>
+      <p class="brand-sub">AI-powered closed-loop resource control</p>
+      <p class="brand-desc">
+        Monitor network conditions, let the AI controller select a resource action,
+        and observe the simulated network response.
+      </p>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="scenarioSelect">Network scenario</label>
+        <select id="scenarioSelect">
+          <option value="LOW">Low network demand</option>
+          <option value="MEDIUM" selected>Medium network demand</option>
+          <option value="HIGH">High network demand</option>
+        </select>
+      </div>
+      <button id="runButton" class="run-button">Run AI Control</button>
+      <p class="conn"><span class="conn-dot" id="connectionDot"></span><span id="connectionLabel">connecting&hellip;</span></p>
+    </div>
+
+  </div>
+</header>
+
+<main class="page">
+
+  <div id="statusBanner" class="status-banner hidden"></div>
+
+  <!-- ================= MAIN DASHBOARD ================= -->
+  <div class="dashboard">
+
+    <!-- ---------- NETWORK TELEMETRY ---------- -->
+    <section class="card card-telemetry">
+      <div class="card-head">
+        <h2>Network Telemetry</h2>
+        <span class="card-meta">simulated environment</span>
+      </div>
+
+      <div class="metric-grid">
+        <div class="metric">
+          <span class="metric-label">Traffic Load</span>
+          <span class="metric-value" id="telTraffic">&mdash;</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Latency</span>
+          <span class="metric-value" id="telLatency">&mdash;</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Throughput</span>
+          <span class="metric-value" id="telThroughput">&mdash;</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Resource Utilization</span>
+          <span class="metric-value" id="telResource">&mdash;</span>
+        </div>
+      </div>
+
+      <p class="condition-line">
+        Current network condition:
+        <strong id="networkCondition">&mdash;</strong>
+      </p>
+    </section>
+
+    <!-- ---------- AI CONTROL ---------- -->
+    <section class="card card-ai">
+      <div class="card-head">
+        <h2>AI Control</h2>
+        <span class="card-meta">Q-Learning controller</span>
+      </div>
+
+      <div class="ai-block">
+        <span class="ai-label">Current state</span>
+        <ul class="state-list">
+          <li id="stateTraffic">&mdash;</li>
+          <li id="stateLatency">&mdash;</li>
+          <li id="stateResource">&mdash;</li>
+        </ul>
+      </div>
+
+      <div class="ai-block ai-decision">
+        <span class="ai-label">Selected action</span>
+        <p class="action-value" id="actionName">&mdash;</p>
+        <p class="action-reason" id="actionExplanation">
+          Run the AI control to see the controller's decision.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ================= NETWORK RESPONSE ================= -->
+  <section class="card card-response">
+    <div class="card-head">
+      <h2>Network Response</h2>
+      <span class="card-meta">simulated network conditions after the AI control action</span>
+    </div>
+
+    <div class="response-table">
+      <div class="response-head">
+        <span></span>
+        <span>Before</span>
+        <span>After</span>
+      </div>
+      <div class="response-row">
+        <span class="response-metric">Latency</span>
+        <span class="response-before" id="beforeLatency">&mdash;</span>
+        <span class="response-after" id="afterLatency">&mdash;</span>
+      </div>
+      <div class="response-row">
+        <span class="response-metric">Throughput</span>
+        <span class="response-before" id="beforeThroughput">&mdash;</span>
+        <span class="response-after" id="afterThroughput">&mdash;</span>
+      </div>
+      <div class="response-row">
+        <span class="response-metric">Resource Utilization</span>
+        <span class="response-before" id="beforeResource">&mdash;</span>
+        <span class="response-after" id="afterResource">&mdash;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEEDBACK ================= -->
+  <section class="card card-feedback">
+    <div class="feedback-figures">
+      <div class="feedback-item">
+        <span class="feedback-label">Reward</span>
+        <span class="feedback-value" id="rewardValue">&mdash;</span>
+      </div>
+      <div class="feedback-item">
+        <span class="feedback-label">Controller status</span>
+        <span class="feedback-status" id="controllerStatus">&mdash;</span>
+      </div>
+    </div>
+    <div class="feedback-text">
+      <h2>Feedback</h2>
+      <p id="feedbackMessage">
+        The network response was evaluated and the resulting reward was returned
+        to the controller.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about">
+    <h3>About this prototype</h3>
+    <p>
+      This project implements a focused part of the research paper's closed-loop
+      AI/ML wireless network management concept. The prototype uses Q-Learning to
+      dynamically adjust simulated wireless resource allocation based on network
+      telemetry.
+    </p>
+    <p class="about-tags">
+      <span class="tag">Prototype scope: Dynamic Wireless Resource Allocation</span>
+      <span class="tag">AI Controller: Q-Learning</span>
+    </p>
+    <p class="model-line" id="modelLine">
+      Q-Learning &bull; 5,000 training episodes &bull; 3 actions
+    </p>
+  </section>
+
+  <footer class="footnote">
+    Simulation only &mdash; not connected to real wireless hardware.
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
