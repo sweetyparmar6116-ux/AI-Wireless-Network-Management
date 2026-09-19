@@ -121,13 +121,3 @@ response, and feedback.
 | Network response / actuator                       | `NetworkEnvironment.java` (a simulated environment, not real hardware)       |
 | Feedback loop / reward                            | A reward calculated from latency and resource efficiency, fed back to update the Q-table |
 | Closed-loop operation                             | Telemetry → Controller → Action → Response → Feedback, executed end-to-end on every dashboard run |
-
-**What is explicitly *not* implemented**, and is not claimed to be: the paper's
-multi-horizon (fast/medium/slow) control hierarchy, PID/MPC hybrid safety
-filtering, transmit power / channel assignment / scheduling / handover-threshold
-actions, federated/distributed learning, telemetry pipelines built on
-Prometheus/Kafka, sandboxed validation and rollback tooling, or deep-RL methods
-(DQN/DDPG/PPO). This prototype is a small, single-loop illustration of the
-concept the paper proposes at a much larger production scale.
-
----
