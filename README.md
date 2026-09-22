@@ -30,7 +30,7 @@ This project is a **focused prototype** of the closed-loop AI/ML wireless networ
 
 ## 2. Application Screenshot
 
-![Application Screenshot](screenshots/dashboard.png)
+![Application Screenshot](screenshots/Application.png)
 
 The dashboard is the only screen in the application. It shows, top to bottom:
 
@@ -114,36 +114,7 @@ Q-Table Update
 
 ## 6. Sample Output
 
-The values below are an example of what one run of the dashboard can show. **These are simulated values and will vary between runs** since telemetry includes randomness — they are not fixed, guaranteed, or measured from a real network.
-
-```
-NETWORK TELEMETRY (before)
-  Traffic Load:          50%
-  Latency:                30.7 ms
-  Throughput:             55 Mbps
-  Resource Utilization:   60%
-  Current network condition: MODERATE DEMAND
-
-AI CONTROLLER (Q-Learning)
-  Current state:  MEDIUM TRAFFIC, MEDIUM LATENCY, MEDIUM RESOURCE USAGE
-  Selected action: INCREASE RESOURCES
-  Reason: High network demand detected. The controller increases
-          resource allocation to improve network performance.
-
-NETWORK RESPONSE
-                          Before      After
-  Latency                 30.7 ms     12.0 ms
-  Throughput              55 Mbps     80 Mbps
-  Resource Utilization    60%         90%
-
-FEEDBACK
-  Reward:              +7.0
-  Controller status:  UPDATED
-  Message: The network response was evaluated and the resulting
-           reward was returned to the controller, which updated
-           its learned values.
-```
-
+![Sample Output](screenshots/Sample%20Output.png)
 ---
 
 ## 7. Reference Paper
@@ -174,4 +145,4 @@ This project does **not** claim to implement the paper's full research system, i
 
 ---
 
-*Screenshots for this README were saved to `screenshots/dashboard.png`.*
+
